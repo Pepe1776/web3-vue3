@@ -12,22 +12,22 @@ const { account, guestPosts, guestPostsCount } = storeToRefs(cryptoStore)
     <h1 class="text-2xl m-4">
       JParker's Crypto Guest Book
     </h1>
-    <button v-if="!account" class="bg-green-300 rounded p-4" @click="connectWallet">
+    <button v-if="!account" class="dark:bg-cyan-900 bg-teal-300 rounded p-4" @click="connectWallet">
       Connect Wallet
     </button>
     <div v-if="account" class="mt-5">
       <input
         v-model="messageInput"
         name="guestBookInfo"
-        class="py-4 px-4  shadow border rounded"
+        class="py-4 px-4 dark:text-black  shadow border rounded"
         maxlength="20"
       >
-      <button class="bg-yellow-300 rounded p-4 mt-10" @click="wave(messageInput)">
+      <button class="dark:hover:bg-cyan-700 hover-bg-teal-100 dark:bg-cyan-900 bg-teal-200 rounded p-4 mt-10" @click="wave(messageInput)">
         Send
       </button>
     </div>
 
-    <div v-if="account" class="border shadow  w-4/12 p-4 mt-10">
+    <div v-if="account" class="dark:bg-cyan-900 bg-teal-300 border shadow  w-4/12 p-4 mt-10 rounded-xl">
       <h3 class="text-2xl">
         Number Of Entries: {{ guestPostsCount }}
       </h3>
